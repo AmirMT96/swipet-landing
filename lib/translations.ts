@@ -44,6 +44,10 @@ export const translations = {
       errorMessage:
         "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     },
+    screenshots: {
+      heading: "Swipet in Aktion",
+      subtext: "Entdecke Hunde, finde Gassi-Partner und verwalte dein Tierheim — alles in einer App.",
+    },
     footer: {
       tagline: "Love at first sniff",
       copyright: "© 2026 Swipet. Alle Rechte vorbehalten.",
@@ -91,6 +95,10 @@ export const translations = {
       successTitle: "You're in! 🐾",
       successMessage: "We'll reach out when the time comes.",
       errorMessage: "Something went wrong. Please try again.",
+    },
+    screenshots: {
+      heading: "Swipet in Action",
+      subtext: "Discover dogs, find walking partners and manage your shelter — all in one app.",
     },
     footer: {
       tagline: "Love at first sniff",
