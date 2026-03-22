@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   title: "Swipet – Love at first sniff",
   description:
     "Swipet – Die App, die Tierfreunde verbindet. Gib uns Feedback und sei dabei wenn wir launchen.",
-  metadataBase: new URL("https://swipet.de"),
+  metadataBase: new URL("https://www.swipet.de"),
   openGraph: {
     title: "Swipet – Love at first sniff",
     description: "Gib uns Feedback und sei dabei wenn wir launchen.",
-    url: "https://swipet.de",
+    url: "https://www.swipet.de",
     siteName: "Swipet",
     locale: "de_DE",
     type: "website",
