@@ -7,9 +7,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Email is required" }, { status: 400 });
   }
 
-  const apiKey = process.env.BREVO_API_KEY;
+  const apiKey = process.env.BREVO_CONTACTS_API_KEY;
   if (!apiKey) {
-    console.error("BREVO_API_KEY is not set");
+    console.error("BREVO_CONTACTS_API_KEY is not set");
     return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
   }
 
