@@ -5,12 +5,14 @@ import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 
 const SCREENSHOTS = [
-  "/SH1.png",
-  "/SH2.png",
   "/SH3.png",
-  "/SH4.png",
   "/SH5.png",
+  "/SH2.png",
+  "/SH4.png",
   "/SH6.png",
+  "/SH1.png",
+  "/SH8.png",
+  "/SH7.png",
 ];
 
 interface ScreenshotsSectionProps {
