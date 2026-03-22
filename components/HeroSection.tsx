@@ -39,7 +39,7 @@ export default function HeroSection({ heroT }: HeroSectionProps) {
         <div className="animate-float-slow mb-8">
           <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/25">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Swipet"
               width={112}
               height={112}
