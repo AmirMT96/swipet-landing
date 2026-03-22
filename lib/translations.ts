@@ -34,7 +34,9 @@ export const translations = {
     signup: {
       heading: "Sei dabei wenn wir launchen",
       subheading: "Kein Spam. Nur die wichtigsten Updates.",
-      emailPlaceholder: "Deine E-Mail-Adresse",
+      firstNamePlaceholder: "Vorname",
+      lastNamePlaceholder: "Nachname",
+      emailPlaceholder: "E-Mail-Adresse",
       button: "Dabei sein",
       submitting: "Wird gesendet…",
       successTitle: "Du bist dabei! 🐾",
@@ -81,7 +83,9 @@ export const translations = {
     signup: {
       heading: "Be the first to know when we launch",
       subheading: "No spam. Just the important updates.",
-      emailPlaceholder: "Your email address",
+      firstNamePlaceholder: "First name",
+      lastNamePlaceholder: "Last name",
+      emailPlaceholder: "Email address",
       button: "I'm in",
       submitting: "Sending…",
       successTitle: "You're in! 🐾",

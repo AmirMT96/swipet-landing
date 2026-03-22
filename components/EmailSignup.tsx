@@ -10,30 +10,29 @@ interface EmailSignupProps {
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_SIGNUP_ID;
-
 export default function EmailSignup({ signupT }: EmailSignupProps) {
   const { ref, isInView } = useInView();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email || !FORM_ID) {
-      setStatus("error");
-      return;
-    }
+    if (!email) return;
     setStatus("loading");
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
+      const res = await fetch("/api/signup", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, firstName, lastName }),
       });
 
       if (res.ok) {
         setStatus("success");
+        setFirstName("");
+        setLastName("");
         setEmail("");
       } else {
         setStatus("error");
@@ -42,6 +41,12 @@ export default function EmailSignup({ signupT }: EmailSignupProps) {
       setStatus("error");
     }
   };
+
+  const inputClass =
+    "flex-1 min-w-0 border border-gray-200 rounded-full px-5 py-3.5 text-sm " +
+    "text-swipet-text placeholder-gray-400 bg-white shadow-sm " +
+    "focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary " +
+    "transition-all duration-200";
 
   return (
     <section
@@ -52,7 +57,7 @@ export default function EmailSignup({ signupT }: EmailSignupProps) {
           "linear-gradient(135deg, rgba(240,149,106,0.07) 0%, rgba(226,114,137,0.10) 100%)",
       }}
     >
-      {/* Subtle decorative circle */}
+      {/* Decorative blobs */}
       <div
         className="absolute -top-24 -right-24 w-72 h-72 rounded-full opacity-30 blur-3xl pointer-events-none"
         style={{ background: "rgba(226,114,137,0.15)" }}
@@ -87,62 +92,79 @@ export default function EmailSignup({ signupT }: EmailSignupProps) {
               <p className="text-gray-400 text-sm">{signupT.successMessage}</p>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={signupT.emailPlaceholder}
-                required
-                className="flex-1 border border-gray-200 rounded-full px-5 py-3.5 text-sm
-                  text-swipet-text placeholder-gray-400 bg-white shadow-sm
-                  focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary
-                  transition-all duration-200"
-              />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="px-7 py-3.5 bg-primary text-white font-semibold rounded-full text-sm
-                  shadow-md hover:shadow-lg hover:brightness-105 hover:scale-[1.02]
-                  active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed
-                  transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/30
-                  whitespace-nowrap"
-              >
-                {status === "loading" ? (
-                  <span className="flex items-center gap-2">
-                    <svg
-                      className="animate-spin h-3.5 w-3.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                      />
-                    </svg>
-                    {signupT.submitting}
-                  </span>
-                ) : (
-                  signupT.button
-                )}
-              </button>
-            </form>
-          )}
+            <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Name row */}
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder={signupT.firstNamePlaceholder}
+                  className={inputClass}
+                />
+                <input
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder={signupT.lastNamePlaceholder}
+                  className={inputClass}
+                />
+              </div>
 
-          {status === "error" && (
-            <p className="mt-4 text-red-500 text-sm">{signupT.errorMessage}</p>
+              {/* Email + Button row */}
+              <div className="flex gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={signupT.emailPlaceholder}
+                  required
+                  className={inputClass}
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="px-7 py-3.5 bg-primary text-white font-semibold rounded-full text-sm
+                    shadow-md hover:shadow-lg hover:brightness-105 hover:scale-[1.02]
+                    active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed
+                    transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/30
+                    whitespace-nowrap"
+                >
+                  {status === "loading" ? (
+                    <span className="flex items-center gap-2">
+                      <svg
+                        className="animate-spin h-3.5 w-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                        />
+                      </svg>
+                      {signupT.submitting}
+                    </span>
+                  ) : (
+                    signupT.button
+                  )}
+                </button>
+              </div>
+
+              {status === "error" && (
+                <p className="text-red-500 text-sm text-center">
+                  {signupT.errorMessage}
+                </p>
+              )}
+            </form>
           )}
         </div>
       </div>
