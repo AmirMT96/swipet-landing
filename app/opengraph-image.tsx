@@ -18,25 +18,15 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "sans-serif",
-          gap: 0,
         }}
       >
-        {/* Logo placeholder circle */}
-        <div
-          style={{
-            width: 140,
-            height: 140,
-            borderRadius: 32,
-            background: "rgba(255,255,255,0.25)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: 32,
-            fontSize: 72,
-          }}
-        >
-          🐾
-        </div>
+        {/* Logo */}
+        <img
+          src="https://www.swipet.de/logo.png"
+          width={180}
+          height={180}
+          style={{ borderRadius: 40, marginBottom: 32 }}
+        />
 
         <div
           style={{
