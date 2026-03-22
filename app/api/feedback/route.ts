@@ -1,28 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   const { profession, likes, changes, wouldUse, name, email } =
     await req.json();
 
-  const smtpUser = process.env.BREVO_SMTP_USER;
-  const smtpPass = process.env.BREVO_API_KEY; // xsmtpsib- key = SMTP password
+  const apiKey = process.env.BREVO_CONTACTS_API_KEY;
   const recipient = process.env.BREVO_FEEDBACK_RECIPIENT;
 
-  if (!smtpUser || !smtpPass || !recipient) {
-    console.error("Missing BREVO_SMTP_USER, BREVO_API_KEY or BREVO_FEEDBACK_RECIPIENT");
+  if (!apiKey || !recipient) {
+    console.error("Missing BREVO_CONTACTS_API_KEY or BREVO_FEEDBACK_RECIPIENT");
     return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
   }
-
-  const transporter = nodemailer.createTransport({
-    host: "smtp-relay.brevo.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: smtpUser,
-      pass: smtpPass,
-    },
-  });
 
   const html = `
     <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; color: #2C2C2A;">
@@ -66,16 +54,30 @@ export async function POST(req: NextRequest) {
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"Swipet Feedback" <${recipient}>`,
-      to: recipient,
-      subject: `🐾 Neues Feedback${name ? ` von ${name}` : ""} – Swipet`,
-      html,
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        "api-key": apiKey,
+      },
+      body: JSON.stringify({
+        sender: { name: "Swipet Feedback", email: recipient },
+        to: [{ email: recipient }],
+        subject: `🐾 Neues Feedback${name ? ` von ${name}` : ""} – Swipet`,
+        htmlContent: html,
+      }),
     });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      console.error("Brevo API error:", res.status, err);
+      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Nodemailer error:", err);
+    console.error("Fetch error:", err);
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
