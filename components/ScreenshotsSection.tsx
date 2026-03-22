@@ -109,6 +109,28 @@ export default function ScreenshotsSection({ screenshotsT }: ScreenshotsSectionP
           transitionDelay: "120ms",
         }}
       >
+        {/* Mockup + arrows row */}
+        <div className="flex items-center gap-5">
+          {/* Left arrow */}
+          <button
+            onClick={() => { goTo(current - 1); resetTimer(); }}
+            aria-label="Vorheriges Bild"
+            className="flex items-center justify-center rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+            style={{
+              width: 44,
+              height: 44,
+              background: "#fff",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.12)",
+              border: "1.5px solid #f0e8ea",
+              color: "#E27289",
+              flexShrink: 0,
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M11 14L6 9l5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
         {/* iPhone mockup — outer div IS the phone frame */}
         <div
           className="relative select-none cursor-grab active:cursor-grabbing shadow-2xl overflow-hidden"
@@ -154,6 +176,27 @@ export default function ScreenshotsSection({ screenshotsT }: ScreenshotsSectionP
             </div>
           ))}
         </div>
+
+          {/* Right arrow */}
+          <button
+            onClick={() => { goTo(current + 1); resetTimer(); }}
+            aria-label="Nächstes Bild"
+            className="flex items-center justify-center rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+            style={{
+              width: 44,
+              height: 44,
+              background: "#fff",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.12)",
+              border: "1.5px solid #f0e8ea",
+              color: "#E27289",
+              flexShrink: 0,
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M7 4l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>{/* end mockup+arrows row */}
 
         {/* Dot indicators */}
         <div className="flex gap-2">
