@@ -46,7 +46,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
             }`}
           >
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Swipet Logo"
               width={32}
               height={32}
