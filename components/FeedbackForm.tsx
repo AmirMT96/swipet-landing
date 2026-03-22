@@ -19,8 +19,6 @@ interface FormData {
   email: string;
 }
 
-const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FEEDBACK_ID;
-
 export default function FeedbackForm({ feedbackT }: FeedbackFormProps) {
   const { ref, isInView } = useInView();
 
@@ -46,23 +44,19 @@ export default function FeedbackForm({ feedbackT }: FeedbackFormProps) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!FORM_ID) {
-      setStatus("error");
-      return;
-    }
     setStatus("loading");
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
+      const res = await fetch("/api/feedback", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          Beruf: formData.profession,
-          Gefällt_mir: formData.likes,
-          Änderungen: formData.changes,
-          Würde_App_nutzen: formData.wouldUse,
-          Name: formData.name || "–",
-          Email: formData.email || "–",
+          profession: formData.profession,
+          likes: formData.likes,
+          changes: formData.changes,
+          wouldUse: formData.wouldUse,
+          name: formData.name,
+          email: formData.email,
         }),
       });
 
