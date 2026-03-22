@@ -46,7 +46,7 @@ export const translations = {
     },
     screenshots: {
       heading: "Swipet in Aktion",
-      subtext: "Entdecke Hunde, finde Gassi-Partner und verwalte dein Tierheim — alles in einer App.",
+      subtext: "Für Hundesuchende, Hundebesitzer und Tierheime.",
     },
     footer: {
       tagline: "Love at first sniff",
@@ -98,7 +98,7 @@ export const translations = {
     },
     screenshots: {
       heading: "Swipet in Action",
-      subtext: "Discover dogs, find walking partners and manage your shelter — all in one app.",
+      subtext: "For dog seekers, dog owners and shelters.",
     },
     footer: {
       tagline: "Love at first sniff",
