@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: `"Swipet Feedback" <${smtpUser}>`,
+      from: `"Swipet Feedback" <${recipient}>`,
       to: recipient,
       subject: `🐾 Neues Feedback${name ? ` von ${name}` : ""} – Swipet`,
       html,
