@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "swipet-landing",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/tmp/swipet-start.sh"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

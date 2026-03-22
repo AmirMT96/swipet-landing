@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-inter), "Inter", sans-serif;
+    background-color: #ffffff;
+    color: #2c2c2a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* Scroll-triggered fade-up animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up.delay-100 {
+    transition-delay: 0.1s;
+  }
+  .fade-up.delay-200 {
+    transition-delay: 0.2s;
+  }
+  .fade-up.delay-300 {
+    transition-delay: 0.3s;
+  }
+  .fade-up.delay-400 {
+    transition-delay: 0.4s;
+  }
+  .fade-up.delay-500 {
+    transition-delay: 0.5s;
+  }
+
+  /* Pill button */
+  .btn-pill {
+    @apply rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  /* Input shared style */
+  .input-field {
+    @apply w-full border border-gray-200 rounded-2xl px-4 py-3 text-swipet-text placeholder-gray-400 bg-white
+    focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary
+    transition-all duration-200 text-sm;
+  }
+}
