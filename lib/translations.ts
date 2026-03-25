@@ -47,11 +47,11 @@ export const translations = {
     about: {
       heading: `F\u00FCr Hunde gibt\u2019s jetzt den perfekten Match`,
       para1:
-        `Swipet verbindet Hunde mit Menschen \u2013 und Hunde miteinander. Die App funktioniert wie ein \u201ETinder f\u00FCr Hunde\u201C und macht es einfacher denn je, den passenden Vierbeiner zu finden oder neue Kontakte f\u00FCr gemeinsame Gassi-Runden zu kn\u00FCpfen.`,
+        `Swipet ist eine App, die Hunde mit Menschen sowie Hundebesitzer untereinander vernetzt \u2013 eine Art \u201ETinder f\u00FCr Hunde\u201C.`,
       para2:
-        `Tierheime k\u00F6nnen ihre Hunde direkt auf Swipet pr\u00E4sentieren und erreichen so gezielt Menschen, die auf der Suche nach einem neuen Begleiter sind. Gleichzeitig erm\u00F6glicht die App Hundebesitzern, unkompliziert \u201EGassi-Dates\u201C zu organisieren und ihre Hunde sozial zu vernetzen.`,
+        `\u00DCber die App erhalten Tierheime die M\u00F6glichkeit, ihre Hunde digital zu registrieren und sichtbar zu machen. Interessierte Nutzer k\u00F6nnen durch Profile swipen und gezielt nach einem passenden Hund suchen. Gleichzeitig schafft Swipet einen Mehrwert f\u00FCr bestehende Hundebesitzer: Die App erm\u00F6glicht es, andere Hundehalter in der N\u00E4he zu finden und gemeinsame \u201EGassi-Dates\u201C zu organisieren.`,
       para3:
-        "Der Fokus liegt aktuell auf Hunden – mit dem Ziel, künftig auch weitere Tiere in die Plattform zu integrieren.",
+        `Der MVP fokussiert sich bewusst auf Hunde \u2013 perspektivisch wird Swipet auf weitere Tierarten erweitert.`,
     },
     screenshots: {
       heading: "Swipet in Aktion",
@@ -108,11 +108,11 @@ export const translations = {
     about: {
       heading: "The perfect match for dogs \u2014 now a reality",
       para1:
-        "Swipet connects dogs with people \u2013 and dogs with each other. The app works like a \"Tinder for dogs\", making it easier than ever to find the right four-legged companion or meet new contacts for walks together.",
+        "Swipet is an app that connects dogs with people and dog owners with each other \u2013 a kind of \"Tinder for dogs\".",
       para2:
-        "Shelters can showcase their dogs directly on Swipet, reaching people who are actively looking for a new companion. At the same time, the app lets dog owners easily arrange \"walking dates\" and help their dogs build a social life.",
+        "Shelters can digitally register and showcase their dogs on the platform. Interested users can swipe through profiles and search for the perfect match. At the same time, Swipet adds value for existing dog owners: the app makes it easy to find other dog owners nearby and arrange \"walking dates\" together.",
       para3:
-        "The current focus is on dogs \u2013 with the goal of expanding the platform to include other animals in the future.",
+        "The MVP deliberately focuses on dogs \u2013 with plans to expand Swipet to other animal species in the future.",
     },
     screenshots: {
       heading: "Swipet in Action",
