@@ -44,6 +44,28 @@ export const translations = {
       errorMessage:
         "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     },
+    about: {
+      heading: "Hunde verbinden. Menschen begeistern.",
+      subtext:
+        "Swipet bringt zusammen, was zusammengehört — Hunde, die ein Zuhause suchen, Besitzer, die Abenteuer teilen wollen, und Tierheime, die endlich sichtbar werden.",
+      features: [
+        {
+          icon: "🏠",
+          title: "Hunde adoptieren",
+          text: "Tierheime stellen ihre Hunde vor. Du findest deinen Traumhund — so einfach wie Swipe, so bedeutsam wie Liebe auf den ersten Blick.",
+        },
+        {
+          icon: "🐕",
+          title: "Gassi-Dates",
+          text: "Finde Hundebesitzer in deiner Nähe und verabrede gemeinsame Spaziergänge. Für Hunde, die spielen wollen — und Menschen, die Gleichgesinnte suchen.",
+        },
+        {
+          icon: "❤️",
+          title: "Matches, die zählen",
+          text: "Kein endloses Scrollen, kein Zufall. Swipet verbindet auf Basis von Persönlichkeit, Standort und Lebensweise — für Begegnungen, die wirklich passen.",
+        },
+      ],
+    },
     screenshots: {
       heading: "Swipet in Aktion",
       subtext: "Für Hundesuchende, Hundebesitzer und Tierheime.",
@@ -95,6 +117,28 @@ export const translations = {
       successTitle: "You're in! 🐾",
       successMessage: "We'll reach out when the time comes.",
       errorMessage: "Something went wrong. Please try again.",
+    },
+    about: {
+      heading: "Connecting dogs. Inspiring people.",
+      subtext:
+        "Swipet brings together what belongs together — dogs looking for a home, owners who want to share adventures, and shelters that finally get the visibility they deserve.",
+      features: [
+        {
+          icon: "🏠",
+          title: "Adopt a dog",
+          text: "Shelters showcase their dogs. You find your perfect match — as easy as a swipe, as meaningful as love at first sight.",
+        },
+        {
+          icon: "🐕",
+          title: "Walking dates",
+          text: "Find dog owners near you and arrange walks together. For dogs that want to play — and people who want to find their tribe.",
+        },
+        {
+          icon: "❤️",
+          title: "Matches that matter",
+          text: "No endless scrolling, no guesswork. Swipet matches based on personality, location and lifestyle — for connections that truly fit.",
+        },
+      ],
     },
     screenshots: {
       heading: "Swipet in Action",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { translations, Lang } from "@/lib/translations";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import ScreenshotsSection from "@/components/ScreenshotsSection";
 import FeedbackForm from "@/components/FeedbackForm";
 import EmailSignup from "@/components/EmailSignup";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar lang={lang} setLang={setLang} />
       <HeroSection heroT={t.hero} />
+      <AboutSection aboutT={t.about} />
       <ScreenshotsSection screenshotsT={t.screenshots} />
       <FeedbackForm feedbackT={t.feedback} />
       <EmailSignup signupT={t.signup} />
