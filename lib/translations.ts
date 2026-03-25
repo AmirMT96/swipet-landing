@@ -45,9 +45,13 @@ export const translations = {
         "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     },
     about: {
-      heading: "Hunde verbinden. Menschen begeistern.",
-      subtext:
-        "Swipet bringt zusammen, was zusammengehört — Hunde, die ein Zuhause suchen, Besitzer, die Abenteuer teilen wollen, und Tierheime, die endlich sichtbar werden.",
+      heading: "Finde den perfekten Match für dich und deinen Hund",
+      para1:
+        `Swipet verbindet Hunde mit Menschen \u2013 und Hunde miteinander. Die App funktioniert wie ein \u201ETinder f\u00FCr Hunde\u201C und macht es einfacher denn je, den passenden Vierbeiner zu finden oder neue Kontakte f\u00FCr gemeinsame Gassi-Runden zu kn\u00FCpfen.`,
+      para2:
+        `Tierheime k\u00F6nnen ihre Hunde direkt auf Swipet pr\u00E4sentieren und erreichen so gezielt Menschen, die auf der Suche nach einem neuen Begleiter sind. Gleichzeitig erm\u00F6glicht die App Hundebesitzern, unkompliziert \u201EGassi-Dates\u201C zu organisieren und ihre Hunde sozial zu vernetzen.`,
+      para3:
+        "Der Fokus liegt aktuell auf Hunden – mit dem Ziel, künftig auch weitere Tiere in die Plattform zu integrieren.",
       features: [
         {
           icon: "🏠",
@@ -119,9 +123,13 @@ export const translations = {
       errorMessage: "Something went wrong. Please try again.",
     },
     about: {
-      heading: "Connecting dogs. Inspiring people.",
-      subtext:
-        "Swipet brings together what belongs together — dogs looking for a home, owners who want to share adventures, and shelters that finally get the visibility they deserve.",
+      heading: "Find the perfect match for you and your dog",
+      para1:
+        "Swipet connects dogs with people – and dogs with each other. The app works like a \"Tinder for dogs\", making it easier than ever to find the right four-legged companion or meet new contacts for walks together.",
+      para2:
+        "Shelters can showcase their dogs directly on Swipet, reaching people who are actively looking for a new companion. At the same time, the app lets dog owners easily arrange \"walking dates\" and help their dogs build a social life.",
+      para3:
+        "The current focus is on dogs – with the goal of expanding the platform to include other animals in the future.",
       features: [
         {
           icon: "🏠",

@@ -4,7 +4,9 @@ import { useInView } from "@/hooks/useInView";
 
 interface AboutT {
   heading: string;
-  subtext: string;
+  para1: string;
+  para2: string;
+  para3: string;
   features: { icon: string; title: string; text: string }[];
 }
 
@@ -15,17 +17,23 @@ export default function AboutSection({ aboutT }: { aboutT: AboutT }) {
     <section className="py-24 px-6 bg-white">
       <div
         ref={ref}
-        className={`max-w-4xl mx-auto transition-all duration-700 ${
+        className={`max-w-3xl mx-auto transition-all duration-700 ${
           inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Heading */}
+        {/* Heading + paragraphs */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: "#2C2C2A" }}>
             {aboutT.heading}
           </h2>
-          <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#888780" }}>
-            {aboutT.subtext}
+          <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
+            {aboutT.para1}
+          </p>
+          <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
+            {aboutT.para2}
+          </p>
+          <p className="text-base md:text-lg leading-relaxed text-left" style={{ color: "#888780" }}>
+            {aboutT.para3}
           </p>
         </div>
 
