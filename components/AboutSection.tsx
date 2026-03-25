@@ -7,7 +7,6 @@ interface AboutT {
   para1: string;
   para2: string;
   para3: string;
-  features: { icon: string; title: string; text: string }[];
 }
 
 export default function AboutSection({ aboutT }: { aboutT: AboutT }) {
@@ -21,45 +20,18 @@ export default function AboutSection({ aboutT }: { aboutT: AboutT }) {
           inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Heading + paragraphs */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: "#2C2C2A" }}>
-            {aboutT.heading}
-          </h2>
-          <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
-            {aboutT.para1}
-          </p>
-          <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
-            {aboutT.para2}
-          </p>
-          <p className="text-base md:text-lg leading-relaxed text-left" style={{ color: "#888780" }}>
-            {aboutT.para3}
-          </p>
-        </div>
-
-        {/* Feature cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {aboutT.features.map((f, i) => (
-            <div
-              key={i}
-              className="rounded-2xl p-8 text-center transition-all duration-500"
-              style={{
-                background: "#FFF5F7",
-                transitionDelay: `${i * 100}ms`,
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(16px)",
-              }}
-            >
-              <div className="text-4xl mb-4">{f.icon}</div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>
-                {f.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#888780" }}>
-                {f.text}
-              </p>
-            </div>
-          ))}
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" style={{ color: "#2C2C2A" }}>
+          {aboutT.heading}
+        </h2>
+        <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
+          {aboutT.para1}
+        </p>
+        <p className="text-base md:text-lg leading-relaxed mb-5 text-left" style={{ color: "#888780" }}>
+          {aboutT.para2}
+        </p>
+        <p className="text-base md:text-lg leading-relaxed text-left" style={{ color: "#888780" }}>
+          {aboutT.para3}
+        </p>
       </div>
     </section>
   );

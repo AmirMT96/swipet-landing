@@ -45,30 +45,13 @@ export const translations = {
         "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
     },
     about: {
-      heading: "Finde den perfekten Match für dich und deinen Hund",
+      heading: `F\u00FCr Hunde gibt\u2019s jetzt den perfekten Match`,
       para1:
         `Swipet verbindet Hunde mit Menschen \u2013 und Hunde miteinander. Die App funktioniert wie ein \u201ETinder f\u00FCr Hunde\u201C und macht es einfacher denn je, den passenden Vierbeiner zu finden oder neue Kontakte f\u00FCr gemeinsame Gassi-Runden zu kn\u00FCpfen.`,
       para2:
         `Tierheime k\u00F6nnen ihre Hunde direkt auf Swipet pr\u00E4sentieren und erreichen so gezielt Menschen, die auf der Suche nach einem neuen Begleiter sind. Gleichzeitig erm\u00F6glicht die App Hundebesitzern, unkompliziert \u201EGassi-Dates\u201C zu organisieren und ihre Hunde sozial zu vernetzen.`,
       para3:
         "Der Fokus liegt aktuell auf Hunden – mit dem Ziel, künftig auch weitere Tiere in die Plattform zu integrieren.",
-      features: [
-        {
-          icon: "🏠",
-          title: "Hunde adoptieren",
-          text: "Tierheime stellen ihre Hunde vor. Du findest deinen Traumhund — so einfach wie Swipe, so bedeutsam wie Liebe auf den ersten Blick.",
-        },
-        {
-          icon: "🐕",
-          title: "Gassi-Dates",
-          text: "Finde Hundebesitzer in deiner Nähe und verabrede gemeinsame Spaziergänge. Für Hunde, die spielen wollen — und Menschen, die Gleichgesinnte suchen.",
-        },
-        {
-          icon: "❤️",
-          title: "Matches, die zählen",
-          text: "Kein endloses Scrollen, kein Zufall. Swipet verbindet auf Basis von Persönlichkeit, Standort und Lebensweise — für Begegnungen, die wirklich passen.",
-        },
-      ],
     },
     screenshots: {
       heading: "Swipet in Aktion",
@@ -123,30 +106,13 @@ export const translations = {
       errorMessage: "Something went wrong. Please try again.",
     },
     about: {
-      heading: "Find the perfect match for you and your dog",
+      heading: "The perfect match for dogs \u2014 now a reality",
       para1:
-        "Swipet connects dogs with people – and dogs with each other. The app works like a \"Tinder for dogs\", making it easier than ever to find the right four-legged companion or meet new contacts for walks together.",
+        "Swipet connects dogs with people \u2013 and dogs with each other. The app works like a \"Tinder for dogs\", making it easier than ever to find the right four-legged companion or meet new contacts for walks together.",
       para2:
         "Shelters can showcase their dogs directly on Swipet, reaching people who are actively looking for a new companion. At the same time, the app lets dog owners easily arrange \"walking dates\" and help their dogs build a social life.",
       para3:
-        "The current focus is on dogs – with the goal of expanding the platform to include other animals in the future.",
-      features: [
-        {
-          icon: "🏠",
-          title: "Adopt a dog",
-          text: "Shelters showcase their dogs. You find your perfect match — as easy as a swipe, as meaningful as love at first sight.",
-        },
-        {
-          icon: "🐕",
-          title: "Walking dates",
-          text: "Find dog owners near you and arrange walks together. For dogs that want to play — and people who want to find their tribe.",
-        },
-        {
-          icon: "❤️",
-          title: "Matches that matter",
-          text: "No endless scrolling, no guesswork. Swipet matches based on personality, location and lifestyle — for connections that truly fit.",
-        },
-      ],
+        "The current focus is on dogs \u2013 with the goal of expanding the platform to include other animals in the future.",
     },
     screenshots: {
       heading: "Swipet in Action",
